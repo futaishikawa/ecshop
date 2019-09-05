@@ -31,7 +31,7 @@ class BuyController extends Controller
           $buy->image_url = $request->image_url;
           $buy->save();
           \App\CartPost::where('user_id', Auth::id())->delete();
-          \App\Post::where('post_id')->delete();
+          // \App\Post::where('post_id')->delete();
           return redirect('cartpost/index')->with('flash_message', '商品を購入しました！');;
         }
         $request->flash();
